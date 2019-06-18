@@ -1,0 +1,50 @@
+### Java ###
+# Compiled class file
+*.class
+
+# Build targets
+/target
+*/target
+
+# Log
+/logs
+
+### Maven ###
+pom.xml.tag
+pom.xml.versionsBackup
+release.properties
+buildNumber.properties
+.mvn/timing.properties
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+*.iml
+*.ipr
+*.iws
+.idea/
+
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.rar
+
+# Eclipse project files
+.project
+.classpath
+.settings
+
+# Mac-specific directory that no other operating system needs.
+.DS_Store
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# End of https://www.gitignore.io/api/java,intellij

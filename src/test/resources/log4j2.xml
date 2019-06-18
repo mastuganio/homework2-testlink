@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="30">
+    <Properties>
+        <Property name="consolePattern">[%d{yyyy-MM-dd HH:mm:ss:SSS}]|%-5p|%-10t|%-30C{1}:%L|%m%n</Property>
+        <Property name="consoleHighlight">FATAL=red blink, ERROR=red blink, WARN=yellow bold, DEBUG=green bold, TRACE=blue</Property>
+        <Property name="rollingFilePattern">[%d{yyyy-MM-dd HH:mm:ss:SSS}]|%-5p|%-t|%-C{1}:%L|%m%n</Property>
+        <Property name="logFile">logs/testrun.log</Property>
+        <Property name="filePattern">logs/$${date:yyyy-MM}/tests-%d{MM-dd-yyyy}-%i.log.gz</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>%highlight{${consolePattern}}{${consoleHighlight}}</Pattern>
+            </PatternLayout>
+        </Console>
+        <RollingFile name="RollingFile" fileName="${logFile}" filePattern="${filePattern}">
+            <PatternLayout>
+                <Pattern>${rollingFilePattern}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="12" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
