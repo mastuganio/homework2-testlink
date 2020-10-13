@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.selenium.java>3.141.59</version.selenium.java>
         <version.webdriver.manager>3.6.0</version.webdriver.manager>
         <version.log4j.core>2.11.2</version.log4j.core>
